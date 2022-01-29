@@ -1,0 +1,10 @@
+.Content {
+    @include flexContainer(column, center, center);
+
+    &__drag-n-drop {
+        color: var(--lt-dark-grayish-blue);
+        font-size: .9rem;
+        font-weight: var(--font-weigth-bold);
+        margin: 3.5rem 0 4rem 0;
+    }
+}

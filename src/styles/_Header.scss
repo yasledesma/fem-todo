@@ -1,0 +1,64 @@
+.Header {
+    @include flexContainer(column, center, center);
+    gap: 1.5rem;
+    background-image: url("../assets/bg-mobile-light.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 375px;
+    min-height: 200px;
+
+    &__wrapper {
+        @include flexContainer(row, center, center);
+        gap: 8.5rem;
+    }
+
+    &__title {
+        text-transform: uppercase;
+        color: var(--lt-very-light-gray);
+        letter-spacing: .7rem;
+        font-size: 1.6rem;
+    }
+
+    &__btn {
+        width: 2rem;
+        transform: translateY(.1rem);
+
+        &__img {
+            width: 1.2rem;
+            min-height: 1.2rem;
+            transform: translateY(-0.1rem);
+        }
+    }
+
+    &__input {
+        display: grid;
+        grid-template-areas: 
+            "text radio text text";
+
+        &__text {
+            grid-area: text;
+            width: 18rem;
+            min-height: 3rem;
+            border-radius: .3rem;
+            border: none;
+            color: var(--lt-dark-grayish-blue);
+            font-weight: var(--font-weigth-bold);
+            padding-left: 2.5rem;
+
+            &::placeholder {
+                color: var(--lt-dark-grayish-blue);
+                font-family: var(--primary-font);
+                font-weight: var(--font-weigth-bold);
+            }
+        }
+    
+        &__radio {
+            grid-area: radio;
+            border: .1rem solid var(--lt-very-light-gray);
+            width: 1.2rem;
+            height: 1.2rem;
+            z-index: 999;
+            transform: translateX(1rem) translateY(.9rem);
+        }
+    }
+}

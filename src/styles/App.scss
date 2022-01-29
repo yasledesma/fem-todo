@@ -1,4 +1,4 @@
-/* Partials and Imports */
+/* Imports */
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
 
 /* Variables */
@@ -7,12 +7,13 @@
     --primary-color: hsl(220, 98%, 61%);
     --secondary-color: rgb(255, 255, 255);
     --check-background: linear-gradient(90deg, rgba(87,221,255,1) 0%, rgba(192,88,243,1) 100%);
+    --box-shadow: hsla(210, 75%, 27%, 0.1);
 
     /* Light Theme */
     --lt-very-light-gray: hsl(0, 0%, 98%);
     --lt-very-light-grayish-blue: hsl(236, 33%, 92%);
     --lt-light-grayish-blue: hsl(233, 11%, 84%);
-    --lt-dark-grayish-blue: hsl(236, 9%, 61%);
+    --lt-dark-grayish-blue: hsl(237, 9%, 61%);
     --lt-very-dark-grayish-blue: hsl(235, 19%, 35%);
 
     /* Dark Theme */
@@ -59,175 +60,30 @@ body {
     background-color: var(--lt-very-light-gray);
 }
 
-.attribution { 
-    font-size: var(--atributtion-font-size); 
-    text-align: center;
-
-    & a {
-        color: var(--link-color); 
-    }
+a {
+    color: var(--link-color); 
 }
 
 button {
+    background: none;
+    border: none;
+
     &:hover {
         cursor: pointer;
     }
 }
 
 
-/* Layout */
+/* Layout - 375px Mobile Medium */
 
-.main {
-    display: grid;
-}
-
-.header {
+.App {
     @include flexContainer(column, center, center);
-    gap: 1.5rem;
-    background-image: url(../assets/bg-mobile-light.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    max-width: 375px;
-    min-height: 200px;
 }
 
-.content {
-    font-size: .77rem;
-    min-height: 392px;
-    background-color: transparent;
-    transform: translateY(-1.5rem);
-    @include flexContainer(column, center, flex-start);
-}
-
-.footer{
-    padding-block: 1rem;
-}
-
-/* Modules */
-.container {
-    @include flexContainer(row, center, center);
-    gap: 9rem;
-    // margin-top: 3rem;
-    
-    .header__title {
-        text-transform: uppercase;
-        color: var(--lt-very-light-gray);
-        letter-spacing: .7rem;
-        font-size: 1.6rem;
-    }
-
-    .header__icon {
-        background-image: url(../assets/icon-moon.svg);
-        background-size: cover;
-        background-repeat: no-repeat;
-        width: 1.2rem;
-        min-height: 1.2rem;
-        transform: translateY(-0.1rem);
-    }
-}
-
-.task__input {
-    display: grid;
-    grid-template-areas: 
-        "text radio text text";
-
-    &__radio {
-        grid-area: radio;
-        border: .1rem solid var(--lt-very-light-gray);
-        width: 1.2rem;
-        height: 1.2rem;
-        z-index: 999;
-        transform: translateX(1rem) translateY(.9rem);
-    }
-
-    &__text {
-        grid-area: text;
-        width: 18rem;
-        min-height: 3rem;
-        border-radius: .3rem;
-        border: none;
-        color: var(--lt-dark-grayish-blue);
-        font-weight: var(--font-weigth-bold);
-        padding-left: 2.5rem;
-        
-        &::placeholder {
-            color: var(--lt-dark-grayish-blue);
-            font-family: var(--primary-font);
-            font-weight: var(--font-weigth-bold);
-        }
-    }
-}
-
-.task__list {
-    display: grid;
-    grid-template-areas: 
-        "text text radio text text btn text text"
-        "utilities utilities utilities";
-
-    &__radio {
-        @extend .task__input__radio;
-    }
-
-    &__text {
-        @extend .task__input__text;
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
-        background-color: var(--secondary-color);
-        border-bottom: .11rem solid var(--lt-light-grayish-blue);
-
-        &__para {
-            transform: translateY(1.21rem);
-            color: var(--lt-very-dark-grayish-blue);
-        }
-    }
-
-    &__btn {
-        grid-area: btn;
-        background-image: url("../assets/icon-cross.svg");
-        background-size: cover;
-        background-repeat: no-repeat;
-        width: .8rem;
-        height: .8rem;
-        transform: translateX(16.2rem) translateY(1.2rem);
-        fill: var(--lt-very-dark-grayish-blue);
-
-        &:hover {
-            cursor: pointer;
-        }
-    }
-}
-
-.todo__list--utilities {
-    grid-area: utilities;
-    @include flexContainer(row, center, center);
-    gap: 6.5rem;
-    width: 18rem;
-    min-height: 3rem;
-    border-bottom-left-radius: .3rem;
-    border-bottom-right-radius: .3rem;
-    border: none;
-    color: var(--lt-dark-grayish-blue);
-    font-weight: var(--font-weigth-bold);
-    background-color: var(--secondary-color);
-
-    .item__utility {
-        &:hover {
-            cursor: pointer;
-        }
-    }
-}
-
-.todo__list--filter {
-    @extend .todo__list--utilities;
-    margin-top: 1rem;
-    border-radius: .3rem;
-    gap: 1.5rem;
-    font-size: .9rem;
-}
-
-.todo__list--drag-and-drop {
-    color: var(--lt-dark-grayish-blue);
-    font-size: .9rem;
-    font-weight: var(--font-weigth-bold);
-    margin-block: 2rem;
-}
+/* Modules - 375px Mobile Medium */
+@import "./Header";
+@import "./Content";
+@import "./Task";
+@import "./List";
+@import "./Filter";
+@import "./Footer";

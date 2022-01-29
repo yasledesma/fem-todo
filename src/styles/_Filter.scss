@@ -1,0 +1,23 @@
+.Filter {
+    @include flexContainer(row, center, center);
+    gap: 1.5rem;
+    width: 18rem;
+    min-height: 3rem;
+    border-bottom-left-radius: .3rem;
+    border-bottom-right-radius: .3rem;
+    background-color: var(--secondary-color);
+    border-radius: .3rem;
+    box-shadow: 0px 14px 48px 2px var(--box-shadow);
+    z-index: 99;
+
+    &__btn {
+        color: var(--lt-dark-grayish-blue);
+        font-weight: var(--font-weigth-bold);
+        font-size: .9rem;
+        font-family: var(--primary-font);
+
+        &:focus {
+            color: var(--primary-color);
+        }
+    }
+}

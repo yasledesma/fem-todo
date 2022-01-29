@@ -1,0 +1,33 @@
+.Task {
+    @include flexContainer(row, center, space-between);
+    background-color: var(--secondary-color);
+    width: 18rem;
+    min-height: 3rem;
+    border-radius: .3rem;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom: .11rem solid var(--lt-light-grayish-blue);
+    z-index: 999;
+
+    &__radio {
+        border: .1rem solid var(--lt-very-light-gray);
+        width: 1.2rem;
+        height: 1.2rem;
+        z-index: 999;
+        transform: translateX(1rem);
+    } 
+
+    &__text {
+        font-weight: var(--font-weigth-bold);
+        font-size: .8rem;
+        padding-left: 1.5rem;
+        color: var(--lt-very-dark-grayish-blue);
+        transform: translateX(-5.3rem) translateY(.1rem);
+    }
+    
+    &__btn {
+        width: .5rem;
+        height: .5rem;
+        transform: translateX(-1.5rem) translateY(-.2rem);
+    }
+}

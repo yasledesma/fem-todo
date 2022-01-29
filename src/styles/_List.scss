@@ -1,0 +1,20 @@
+.List {
+    @include flexContainer(column, center, center);
+    transform: translateY(-1.5rem);
+    
+    &__wrapper {
+        @include flexContainer(row, center, center);
+        gap: 6rem;
+        width: 18rem;
+        min-height: 3rem;
+        border-bottom-left-radius: .3rem;
+        border-bottom-right-radius: .3rem;
+        background-color: var(--secondary-color);
+        box-shadow: 0px 14px 48px 2px var(--box-shadow);
+    }
+    
+    &__btn {
+        color: var(--lt-dark-grayish-blue);
+        font-weight: var(--font-weigth-bold);
+    }
+}

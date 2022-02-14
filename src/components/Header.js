@@ -33,7 +33,7 @@ function Header({ task, setTask, todos, setTodos }) {
         </div>
         <form className='Header__input' onSubmit={handleSubmit}>
             <button type="submit" className='Header__input__btn'></button>
-            <input type="text" placeholder='Create a new todo...' maxLength={55} value={task} onInput={handleInput} className='Header__input__text'></input>
+            <input type="text" placeholder='Create a new todo...' value={task} onInput={handleInput} className='Header__input__text'></input>
         </form>
     </div>
   );

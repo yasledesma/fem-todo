@@ -33,10 +33,8 @@ function List( { todos, setTodos } ) {
               todos.map( todo => {
                   return (
                     <form key={todo.id} className='Task'>
-                        <input type="radio" className='Task__radio' onChange={() => handleCompleted(todo)}></input>
-                        <div>
-                            <p className={todo.completed ? 'Task__text--completed' : 'Task__text--uncompleted'}>{todo.text}</p>
-                        </div>
+                        <input type="checkbox" className='Task__checkbox' onChange={() => handleCompleted(todo)}></input>
+                        <p className={todo.completed ? 'Task__text--completed' : 'Task__text--uncompleted'}>{todo.text}</p>
                         <button type='button' className='Task__btn' onClick={() => handleDelete(todo)}><img src={crossIcon} alt="" className='Task__btn__img'></img></button>
                     </form>
                   );

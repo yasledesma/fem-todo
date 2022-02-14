@@ -1,11 +1,7 @@
 import React from 'react';
-import usePrevious from '../hooks/usePrevious'
 
 function Filter( { todos, setTodos } ) {
 
-  const prevTodos = usePrevious(todos)
-  console.log("next is prevtodos");
-  console.log(prevTodos);
 
   const filterAll = () => {
    

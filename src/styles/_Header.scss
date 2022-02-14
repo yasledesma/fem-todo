@@ -1,11 +1,18 @@
 .Header {
     @include flexContainer(column, center, center);
     gap: 1.5rem;
-    background-image: url("../assets/bg-mobile-light.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     width: 375px;
     min-height: 200px;
+
+    &--light {
+        background-image: url("../assets/bg-mobile-light.jpg");
+    }
+
+    &--dark {
+        background-image: url("../assets/bg-mobile-dark.jpg");
+    }
 
     &__wrapper {
         @include flexContainer(row, center, center);
@@ -37,7 +44,7 @@
 
         &__text {
             grid-area: text;
-            width: 18rem;
+            min-width: 18rem;
             min-height: 3rem;
             border-radius: .3rem;
             border: none;
@@ -52,13 +59,42 @@
             }
         }
     
-        &__radio {
+        &__btn {
             grid-area: radio;
-            border: .1rem solid var(--lt-very-light-gray);
+            border: 1px solid var(--lt-dark-grayish-blue);
+            border-radius: 100%;
             width: 1.2rem;
             height: 1.2rem;
             z-index: 999;
             transform: translateX(1rem) translateY(.9rem);
+
+            &:active {
+                background-color: var(--primary-color);
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .Header {
+        width: 100%;
+
+        &--light {
+            background-image: url("../assets/bg-desktop-light.jpg");
+        }
+
+        &--dark {
+            background-image: url("../assets/bg-desktop-dark.jpg");
+        }
+
+        &__wrapper {
+            gap: 20rem;
+        }
+
+        &__input {
+            &__text {
+                min-width: 30rem;
+            }
         }
     }
 }

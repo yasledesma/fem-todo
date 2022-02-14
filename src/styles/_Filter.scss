@@ -21,3 +21,19 @@
         }
     }
 }
+
+@media screen and (min-width: 1024px) {
+    .Filter {
+        min-height: 3rem;
+        border-bottom-left-radius: none;
+        border-bottom-right-radius: none;
+        background-color: transparent;
+        border-radius: none;
+        box-shadow: none;
+        transform: translateY(-4.48rem) translateX(-1rem);
+
+        &__btn {
+            font-size: .75rem;
+        }
+    }
+}

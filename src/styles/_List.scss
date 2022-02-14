@@ -5,7 +5,7 @@
     &__wrapper {
         @include flexContainer(row, center, center);
         gap: 6rem;
-        width: 18rem;
+        min-width: 18rem;
         min-height: 3rem;
         border-bottom-left-radius: .3rem;
         border-bottom-right-radius: .3rem;
@@ -16,5 +16,19 @@
     &__btn {
         color: var(--lt-dark-grayish-blue);
         font-weight: var(--font-weigth-bold);
+        font-family: var(--primary-font);
+
+        &:active {
+            color: var(--primary-color);
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .List {
+        &__wrapper {
+            width: 30rem;
+            gap: 18rem;
+        }
     }
 }

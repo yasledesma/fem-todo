@@ -15,19 +15,44 @@
         height: 1.2rem;
         z-index: 999;
         transform: translateX(1rem);
+
+        &:checked {
+            background-image: url("../assets/icon-check.svg");
+        }
     } 
 
-    &__text {
+    &__text--uncompleted {
+        flex: 3;
         font-weight: var(--font-weigth-bold);
         font-size: .8rem;
-        padding-left: 1.5rem;
         color: var(--lt-very-dark-grayish-blue);
-        transform: translateX(-5.3rem) translateY(.1rem);
+        max-width: 4.5rem;
+    }
+
+    &__text--completed {
+        flex: 3;
+        font-weight: var(--font-weigth-bold);
+        font-size: .8rem;
+        color: var(--lt-light-grayish-blue);
+        text-decoration: line-through;
+        max-width: 4.5rem;
     }
     
     &__btn {
         width: .5rem;
         height: .5rem;
         transform: translateX(-1.5rem) translateY(-.2rem);
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .Task {
+        width: 30rem;
+        max-width: 30rem;
+
+        &__text {
+            padding-left: 0;
+            transform: translateX(-10.6rem) translateY(.1rem);
+        }
     }
 }

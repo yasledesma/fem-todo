@@ -1,0 +1,58 @@
+.dark-theme {
+    @extend .transition;
+    background-color: var(--dt-very-dark-blue);
+
+    .Header {
+        @extend .transition;
+        background-image: url("../assets/bg-mobile-dark.jpg");
+
+        &__input__text {
+            @extend .transition;
+            background-color: var(--dt-very-dark-desaturated-blue);
+        }
+    }
+
+    .Content {
+        @extend .transition;
+        background-color: var(--dt-very-dark-blue);
+        color: var(--lt-dark-grayish-blue);
+
+        .Task {
+            @extend .transition;
+            background-color: var(--dt-very-dark-desaturated-blue);
+            border-bottom: .11rem solid var(--dt-dark-grayish-blue);
+        }
+
+        .List {
+            @extend .transition;
+
+            &__wrapper {
+                @extend .transition;
+                background-color: var(--dt-very-dark-desaturated-blue);
+            }
+        }
+
+        .Filter {
+            @extend .transition;
+            background-color: var(--dt-very-dark-desaturated-blue);
+        }
+    }
+
+    .Footer {
+        @extend .transition;
+        color: var(--lt-dark-grayish-blue);
+
+        &__p {
+            @extend .transition;
+        }
+    }
+}
+
+
+@media screen and (min-width: 1024px) {
+    .dark-theme{
+        .Header {
+            background-image: url("../assets/bg-desktop-dark.jpg");
+        }
+    }
+}

@@ -73,11 +73,15 @@ button {
     }
 }
 
+.transition {
+    transition: ease-in-out 1000ms;
+}
 
 /* Layout - 375px Mobile Medium */
 
 .App {
-    @include flexContainer(column, center, center);
+    @include flexContainer(column, center, flex-start);
+    min-height: 100vh;
 }
 
 /* Modules - 375px Mobile Medium */
@@ -87,5 +91,7 @@ button {
 @import "./List";
 @import "./Filter";
 @import "./Footer";
+@import "./DarkTheme";
+@import "./LightTheme"
 
 /*  */

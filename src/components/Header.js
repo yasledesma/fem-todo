@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import moonIcon from '../assets/icon-moon.svg';
 import sunIcon from '../assets/icon-sun.svg';
 
-const Header = ({task, setTask, dispatch}) => {
-
-  const [darkTheme, setDarkTheme] = useState(false);
+const Header = ({task, setTask, dispatch, darkTheme, setDarkTheme}) => {
   
   const changeTheme = () => {
     setDarkTheme(!darkTheme);
@@ -22,7 +20,7 @@ const Header = ({task, setTask, dispatch}) => {
   
 
   return (
-    <div className={!darkTheme ? 'Header Header--light' : 'Header Header--dark'}>
+    <div className="Header">
         <div className='Header__wrapper'>
             <h1 className='Header__title'>Todo</h1>
             <button type="button" className='Header__btn' onClick={changeTheme}><img src={!darkTheme ? moonIcon : sunIcon} alt="" className='Header__btn__img'></img></button>

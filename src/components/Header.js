@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import moonIcon from '../assets/icon-moon.svg';
 import sunIcon from '../assets/icon-sun.svg';
-import { v4 as uuid} from 'uuid';
 
-function Header({ task, setTask, todos, setTodos }) {
+const Header = ({task, setTask, dispatch}) => {
 
   const [darkTheme, setDarkTheme] = useState(false);
   
@@ -11,19 +10,16 @@ function Header({ task, setTask, todos, setTodos }) {
     setDarkTheme(!darkTheme);
   }
 
-  const resetInput = () => {
-    setTask("");
-  }
-
   const handleInput = (e) => {
-    setTask(e.target.value);
+    return setTask(`${e.target.value}`);
   }
-
+  
   const handleSubmit = (e) => {
     e.preventDefault();
-    setTodos([{id: uuid(), text: task, completed: false}, ...todos]);
-    resetInput();
+    dispatch({type: "add-task", payload: {task}});
+    setTask("");
   }
+  
 
   return (
     <div className={!darkTheme ? 'Header Header--light' : 'Header Header--dark'}>
@@ -33,10 +29,10 @@ function Header({ task, setTask, todos, setTodos }) {
         </div>
         <form className='Header__input' onSubmit={handleSubmit}>
             <button type="submit" className='Header__input__btn'></button>
-            <input type="text" placeholder='Create a new todo...' value={task} onInput={handleInput} className='Header__input__text'></input>
+            <input type="text" placeholder='Create a new todo...' value={task} className='Header__input__text' onChange={handleInput}></input>
         </form>
     </div>
   );
-}
+};
 
 export default Header;

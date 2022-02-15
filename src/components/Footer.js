@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Footer() {
+const Footer = () => {
   return (
     <div className='Footer'>
         <p className="attribution footer__p">
@@ -9,6 +9,6 @@ function Footer() {
         </p>
     </div>
     );
-}
+};
 
 export default Footer;

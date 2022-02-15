@@ -2,6 +2,10 @@
     @extend .transition;
     background-color: var(--lt-very-light-gray);
 
+    :root {
+        background-color: var(--lt-very-light-gray);
+    }
+
     .Header {
         @extend .transition;
         background-image: url("../assets/bg-mobile-light.jpg");

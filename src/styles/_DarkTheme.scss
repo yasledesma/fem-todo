@@ -2,6 +2,10 @@
     @extend .transition;
     background-color: var(--dt-very-dark-blue);
 
+    :root {
+        background-color: var(--dt-very-dark-blue);
+    }
+
     .Header {
         @extend .transition;
         background-image: url("../assets/bg-mobile-dark.jpg");

@@ -9,9 +9,9 @@
     border-radius: .3rem;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
-    border-bottom: .11rem solid var(--lt-light-grayish-blue);
     z-index: 999;
     overflow-wrap: break-word;
+    z-index: 100;
     
 
     &__checkbox {

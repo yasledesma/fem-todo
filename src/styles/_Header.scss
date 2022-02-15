@@ -1,18 +1,11 @@
 .Header {
     @include flexContainer(column, center, center);
     gap: 1.5rem;
-    background-size: cover;
+    background-size: 100%;
     background-repeat: no-repeat;
+    background-position: center center;
     width: 375px;
     min-height: 200px;
-
-    &--light {
-        background-image: url("../assets/bg-mobile-light.jpg");
-    }
-
-    &--dark {
-        background-image: url("../assets/bg-mobile-dark.jpg");
-    }
 
     &__wrapper {
         @include flexContainer(row, center, center);
@@ -78,14 +71,6 @@
 @media screen and (min-width: 1024px) {
     .Header {
         width: 100%;
-
-        &--light {
-            background-image: url("../assets/bg-desktop-light.jpg");
-        }
-
-        &--dark {
-            background-image: url("../assets/bg-desktop-dark.jpg");
-        }
 
         &__wrapper {
             gap: 20rem;

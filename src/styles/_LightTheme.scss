@@ -1,0 +1,58 @@
+.light-theme {
+    @extend .transition;
+    background-color: var(--lt-very-light-gray);
+
+    .Header {
+        @extend .transition;
+        background-image: url("../assets/bg-mobile-light.jpg");
+
+        &__input__text {
+            @extend .transition;
+            background-color: var(--secondary-color);
+        }
+    }
+
+    .Content {
+        @extend .transition;
+        background-color: var(--lt-very-light-gray);
+        color: var(--lt-dark-grayish-blue);
+
+        .Task {
+            @extend .transition;
+            background-color: var(--secondary-color);
+            border-bottom: .11rem solid var(--lt-light-grayish-blue);
+            color: var(--lt-very-dark-grayish-blue);
+        }
+
+        .List {
+            @extend .transition;
+
+            &__wrapper {
+                @extend .transition;
+                background-color: var(--secondary-color);
+            }
+        }
+
+        .Filter {
+            @extend .transition;
+            background-color: var(--secondary-color);
+        }
+
+        .Footer {
+            @extend .transition;
+
+            &__p {
+                @extend .transition;
+            }
+        }
+    }
+}
+
+
+@media screen and (min-width: 1024px) {
+    .light-theme{
+        .Header {
+            background-image: url("../assets/bg-desktop-light.jpg");
+        }
+    }
+}

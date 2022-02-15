@@ -1,27 +1,51 @@
-import React from 'react';
+import React, {useReducer} from 'react';
 
-function Filter( { todos, setTodos } ) {
+// const filterReducer = (filter, action) => {
+//   switch(action.type) {
+//     case ACTIONS.FILTER_ALL:
+//       return filter;
+//     case ACTIONS.FILTER_ACTIVE:
+//       return filter.filter( todo => {
+//         if(todo.completed === false) {
+//           return todo;
+//         }
+//       });
+//     case ACTIONS.FILTER_COMPLETED:
+//       return filter.filter( todo => {
+//         if(todo.completed === true) {
+//           return todo;
+//         }
+//       });
+//     default:
+//       return filter;
+//   }
+// }
 
+// const ACTIONS = {
+//   FILTER_ALL: "filter-all",
+//   FILTER_ACTIVE: "filter-active",
+//   FILTER_COMPLETED: "filter-completed"
+// };
 
-  const filterAll = () => {
-   
-  };
+const Filter = () => {
 
-  const filterActive = () => {
+  const handleFilter = (e) => {
+    if(e.target.innerHTML === "All") {
+
+    } 
     
-  };
+    if(e.target.innerHTML === "Active") {
 
-  const filterCompleted = () => {
-
-  };
+    } 
+  }
 
   return (
       <div className='Filter'>
-          <button type="button" className='Filter__btn' onLoad={filterAll}>All</button>
-          <button type="button" className='Filter__btn' onClick={filterActive}>Active</button>
-          <button type="button" className='Filter__btn' onClick={filterCompleted}>Completed</button>
+          <button type="button" className='Filter__btn' onClick={handleFilter}>All</button>
+          <button type="button" className='Filter__btn' onClick={handleFilter}>Active</button>
+          <button type="button" className='Filter__btn' onClick={handleFilter}>Completed</button>
       </div>
     );
-}
+};
 
 export default Filter;

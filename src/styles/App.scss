@@ -81,6 +81,7 @@ button {
 
 .App {
     @include flexContainer(column, center, flex-start);
+    position: relative;
     min-height: 100vh;
 }
 

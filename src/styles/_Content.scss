@@ -5,7 +5,9 @@
         color: var(--lt-dark-grayish-blue);
         font-size: .9rem;
         font-weight: var(--font-weigth-bold);
-        margin: 3.5rem 0 4rem 0;
+        position: fixed;
+        bottom: 10rem;
+        z-index: 1;
     }
 }
 

@@ -6,7 +6,7 @@ const Content = ({todos, dispatch}) => {
     <div className="Content">
         <List todos={todos} dispatch={dispatch}/>
         <Filter todos={todos} />
-        <p className="Content__drag-n-drop">Drag and drop to reorder the list</p>
+        <div className="Content__drag-n-drop">Drag and drop to reorder the list</div>
     </div>
   );
 };

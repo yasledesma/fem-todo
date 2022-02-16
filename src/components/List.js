@@ -1,19 +1,23 @@
 import React from 'react';
 import Task from "./Task"
-import crossIcon from '../assets/icon-cross.svg';
 
-const List = ({todos, dispatch}) => {
+const List = ({todos, dispatch, filter, setFilter, state}) => {
 
   const handleClear = () => {
     dispatch({type: "clear-completed"});
+    setFilter(todos);
   }; 
+
+  const renderState = () => {
+      return state === true ? [...filter] : [...todos];
+  }
 
   return (
       <div className='List'>
           {
-              todos.map( todo => {
+              renderState().map( task => {
                   return (
-                    <Task key={todo.id} todo={todo} dispatch={dispatch}/>
+                    <Task key={task.id} task={task} dispatch={dispatch}/>
                   );
               })
           }

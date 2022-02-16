@@ -51,7 +51,6 @@ const todoReducer = (todos, action) => {
 };
 
 const ACTIONS = {
-  SET_INPUT: "set-input",
   ADD_TASK: "add-task",
   REMOVE_TASK: "remove-task",
   TOGGLE_COMPLETE_TASK: "toggle-complete-task",
@@ -63,16 +62,24 @@ const ACTIONS = {
 
 const App = () => {
   const [todos, dispatch] = useReducer(todoReducer, []);
+  const [filter, setFilter] = useState([]);
   const [task, setTask] = useState("");
+  const [state, setState] = useState(false);
   const [darkTheme, setDarkTheme] = useState(false);
 
-  console.log("This is todos");
-  console.log(todos)
+  useEffect( () => {
+    setState(false);
+  }, [todos]);
+
+  console.log("this is todos");
+  console.log(todos);
+  console.log("this is filter");
+  console.log(filter);
 
   return (
     <div className={!darkTheme ? "App light-theme" : "App dark-theme"}>
       <Header task={task} setTask={setTask} dispatch={dispatch} darkTheme={darkTheme} setDarkTheme={setDarkTheme}/>
-      <Content todos={todos} dispatch={dispatch}/>
+      <Content todos={todos} dispatch={dispatch} filter={filter} setFilter={setFilter} state={state} setState={setState} />
       <Footer />
     </div>
   );

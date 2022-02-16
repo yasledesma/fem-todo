@@ -6,7 +6,7 @@
         font-size: .9rem;
         font-weight: var(--font-weigth-bold);
         position: fixed;
-        bottom: 10rem;
+        bottom: 8rem;
         z-index: 1;
     }
 }
@@ -17,6 +17,7 @@
 
         &__drag-n-drop {
             margin: 0 0 4rem 0;
+            bottom: 10rem;
         }
     }
 }

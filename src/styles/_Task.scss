@@ -31,25 +31,16 @@
         }
     } 
 
-    &__text--uncompleted {
-        flex: 3;
+    &__text {
         font-weight: var(--font-weigth-bold);
-        font-size: .8rem;
-        color: var(--lt-very-dark-grayish-blue);
-        grid-column: 2/6;
-        width: 100%;
-        padding-block: .8rem;
-    }
 
-    &__text--completed {
-        flex: 3;
-        font-weight: var(--font-weigth-bold);
-        font-size: .8rem;
-        color: var(--lt-light-grayish-blue);
-        text-decoration: line-through;
-        grid-column: 2/6;
-        width: 100%;
-        padding-block: .8rem;
+        &--uncompleted {
+            text-decoration: none;
+        }
+
+        &--completed {
+            text-decoration: line-through;
+        }
     }
     
     &__btn {

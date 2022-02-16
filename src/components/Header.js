@@ -14,7 +14,11 @@ const Header = ({task, setTask, dispatch, darkTheme, setDarkTheme}) => {
   
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch({type: "add-task", payload: {task}});
+    if(task !== "") {
+      dispatch({type: "add-task", payload: {task}});
+    } else {
+      return;
+    }
     setTask("");
   }
   

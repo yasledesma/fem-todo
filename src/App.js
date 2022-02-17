@@ -43,9 +43,6 @@ const ACTIONS = {
   REMOVE_TASK: "remove-task",
   TOGGLE_COMPLETE_TASK: "toggle-complete-task",
   CLEAR_COMPLETED: "clear-completed",
-  FILTER_ALL: "filter-all",
-  FILTER_ACTIVE: "filter-active",
-  FILTER_COMPLETED: "filter-completed",
 };
 
 const App = () => {
@@ -54,6 +51,10 @@ const App = () => {
   const [darkTheme, setDarkTheme] = useState(false);
   const [filter, setFilter] = useState([]);
   const [state, setState] = useState(false);
+
+  useEffect( () => {
+    setState(false);
+  }, [todos]);
 
   return (
     <TodoContext.Provider

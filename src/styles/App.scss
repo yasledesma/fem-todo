@@ -73,6 +73,12 @@ button {
     }
 }
 
+li {
+    list-style: none;
+    top: auto !important;
+    left: auto !important;
+}
+
 .transition {
     transition: ease-in-out 1000ms;
 }

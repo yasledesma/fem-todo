@@ -2,33 +2,31 @@ import React, { useContext } from "react";
 import { TodoContext } from "./TodoContext";
 
 const Filter = () => {
-  const { todos, setState, setFilter } = useContext(TodoContext);
+  const { todos, setRenderize } = useContext(TodoContext);
 
   const handleFilter = (e) => {
     if (e.target.innerHTML === "All") {
-      setState(false);
+      setRenderize(todos);
     }
 
     if (e.target.innerHTML === "Active") {
-      setFilter(
+      setRenderize(
         [...todos].filter((todo) => {
           if (todo.completed === false) {
             return todo;
           }
         })
       );
-      setState(true);
     }
 
     if (e.target.innerHTML === "Completed") {
-      setFilter(
+      setRenderize(
         [...todos].filter((todo) => {
           if (todo.completed === true) {
             return todo;
           }
         })
       );
-      setState(true);
     }
   };
 

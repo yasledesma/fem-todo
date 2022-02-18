@@ -4,18 +4,7 @@ import { TodoContext } from "./TodoContext";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 
 const List = () => {
-  const { todos, dispatch, state, setState, filter, setFilter } = useContext(TodoContext);
-  const [renderize, setRenderize] = useState([]);
-
-  useEffect(() => {
-    if (state === true) {
-      setRenderize(filter);
-    }
-
-    if (state === false) {
-      setRenderize(todos);
-    }
-  }, [state, todos, filter]);
+  const { dispatch, renderize, setRenderize } = useContext(TodoContext);
 
   const reorder = (list, startIndex, endIndex) => {
     const result = Array.from(list);
@@ -26,12 +15,14 @@ const List = () => {
 
   const handleClear = () => {
     dispatch({ type: "clear-completed" });
-    setState(false);
   };
 
   const handleOnDragEnd = (result) => {
-    if (!result.destination || result.source.index === result.destination.index) return;
-    setRenderize(reorder(renderize, result.source.index, result.destination.index));
+    if (!result.destination || result.source.index === result.destination.index)
+      return;
+    setRenderize(
+      reorder(renderize, result.source.index, result.destination.index)
+    );
   };
 
   return (

@@ -46,19 +46,28 @@ const ACTIONS = {
 };
 
 const App = () => {
-  const [todos, dispatch] = useReducer(todoReducer, []);
+  const [todos, dispatch] = useReducer(todoReducer, [], storedTodos);
   const [task, setTask] = useState("");
   const [darkTheme, setDarkTheme] = useState(false);
-  const [filter, setFilter] = useState([]);
-  const [state, setState] = useState(false);
+  const [renderize, setRenderize] = useState(todos);
 
-  useEffect( () => {
-    setState(false);
+  useEffect(() => {
+    localStorage.setItem("todo-list", JSON.stringify(todos));
+    setRenderize(todos)
   }, [todos]);
+
+  function storedTodos() {
+    const localData = localStorage.getItem("todo-list");
+    if(localData) {
+      return JSON.parse(localData);
+    } else {
+      return [];
+    }
+  };
 
   return (
     <TodoContext.Provider
-      value={{ darkTheme, setDarkTheme, todos, dispatch, task, setTask, filter, setFilter, state, setState }}
+      value={{ darkTheme, setDarkTheme, todos, dispatch, task, setTask, renderize, setRenderize }}
     >
       <div className={!darkTheme ? "App light-theme" : "App dark-theme"}>
         <Header />

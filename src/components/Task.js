@@ -3,7 +3,7 @@ import crossIcon from "../assets/icon-cross.svg";
 import { TodoContext } from "./TodoContext";
 
 const Task = ({ task }) => {
-  const { dispatch, setState } = useContext(TodoContext);
+  const { dispatch } = useContext(TodoContext);
 
   const handleToggleCompleted = () => {
     dispatch({ type: "toggle-complete-task", payload: { id: task.id } });
@@ -11,7 +11,6 @@ const Task = ({ task }) => {
 
   const handleRemove = () => {
     dispatch({ type: "remove-task", payload: { id: task.id } });
-    setState(false);
   };
 
   return (

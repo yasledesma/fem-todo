@@ -17,8 +17,12 @@ const Header = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch({ type: "add-task", payload: { task } });
-    setTask("");
+    if (task === "") {
+      return;
+    } else {
+      dispatch({ type: "add-task", payload: { task } });
+      setTask("");
+    }
   };
 
   return (

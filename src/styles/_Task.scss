@@ -14,20 +14,12 @@
     
 
     &__checkbox {
-        -webkit-appearance: none;
-        appearance: none;
         border: .1rem solid var(--lt-dark-grayish-blue);
         width: 1.2rem;
         height: 1.2rem;
         z-index: 999;
         transform: translateX(1rem);
         border-radius: 50%;
-
-        &:checked {
-            background-image: url("../assets/icon-check.svg"), var(--check-background);
-            background-position: center center;
-            background-repeat: no-repeat;
-        }
     } 
 
     &__text {
@@ -49,6 +41,12 @@
         transform: translateX(-1.5rem) translateY(-.2rem);
         grid-column: -1;
     }
+}
+
+.checkbox__checked {
+    background-image: url("../assets/icon-check.svg"), var(--check-background);
+    background-position: center center;
+    background-repeat: no-repeat;
 }
 
 @media screen and (min-width: 1024px) {

@@ -6,12 +6,15 @@
     background-color: var(--secondary-color);
     width: 18rem;
     min-height: 3rem;
-    border-radius: .3rem;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
     overflow-wrap: break-word;
     z-index: 100;
-    
+
+    &:first-child {
+        border-top-left-radius: .3rem;
+        border-top-right-radius: .3rem;
+    }
 
     &__checkbox {
         border: .1rem solid var(--lt-dark-grayish-blue);
@@ -24,6 +27,7 @@
 
     &__text {
         font-weight: var(--font-weigth-bold);
+        grid-column: 2/6;
 
         &--uncompleted {
             text-decoration: none;

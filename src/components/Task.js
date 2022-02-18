@@ -15,11 +15,14 @@ const Task = ({ task }) => {
 
   return (
     <div className="Task">
-      <input
-        type="checkbox"
-        className="Task__checkbox"
-        onChange={handleToggleCompleted}
-      ></input>
+      <button
+        className={
+          task.completed === true
+            ? "Task__checkbox checkbox__checked"
+            : "Task__checkbox"
+        }
+        onClick={handleToggleCompleted}
+      ></button>
       <p
         className={
           task.completed === false
